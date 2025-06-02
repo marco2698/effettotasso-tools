@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Budget Planner{% endblock %}
+{% block content %}
+<h2>Budget Planner</h2>
+<form method="POST">
+  <label>Reddito mensile: <input type="number" name="income" step="0.01" required></label><br>
+  <label>Spese mensili: <input type="number" name="expenses" step="0.01" required></label><br>
+  <button type="submit">Calcola</button>
+</form>
+
+{% if result %}
+  <h3>Risultato</h3>
+  <p>Risparmio: €{{ result.savings }} ({{ result.savings_pct }}%)</p>
+{% endif %}
+{% endblock %}
